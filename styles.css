@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+body,html{
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+body{
+    background: #F4F4F4 url(images/background.png);
+    background-size: cover;
+    animation: moveIt 10s linear infinite;
+}
+
+#home-container{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    height: 100%;
+}
+
+#inner{
+    margin-left: 100px;
+    grid-area: left;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    animation: circleIn 1s ease-in-out forwards;
+}
+
+#illustration{
+    grid-area: right;
+    align-self: center;
+    justify-self: center;
+    width: 60%;
+    margin-right: 80px;
+    position: relative;
+}
+
+img.inner-images{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    opacity: 0.8;
+}
+
+img#cta{
+    width: 50%;
+    margin-top: 50px;
+}
+
+img#cta:hover{
+    opacity: 0.7;
+}
+
+img.logo{
+    width: 200px;
+}
+
+img#team{
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+
+p.subtitle{
+    font-size: 1.25em;
+    color: orangered;
+    margin-top: 0;
+}
+
+p.text{
+    font-size: 1em;
+    color: orangered;
+    opacity: 0.8;
+}
+
+img#circle{
+    width: 100%;
+    animation: circleIn 1s ease-in-out forwards;
+    opacity: 0;  
+}
+
+.service-icons{
+    position: absolute;
+    width: 30%;
+}
+
+#hardware{
+    top: -15%;
+    left: 35%;
+    animation: services .5s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+#software{
+    top: 40%;
+    left: -10%;
+    animation: services .5s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+#networking{
+    top: 90%;
+    left: 35%;
+    animation: services .5s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+#repairs{
+    top: 40%;
+    left: 80%;
+    animation: services .5s ease-in-out 1s forwards;
+    opacity: 0;
+}
+
+@keyframes circleIn{
+    from{
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes services{
+    0%{
+        opacity: 0;
+        transform: scale(.3);
+      }
+      50%{
+        opacity: 1;
+        transform: scale(1.0);
+      }
+      70%{
+        transform: scale(0.9);
+      }
+      100%{
+        transform: scale(1);
+        opacity: 1;
+      }
+}
+
+
+  @keyframes moveIt {
+    from {background-position: top left;}
+    to {background-position: bottom right;}
+  }
