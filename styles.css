@@ -1,5 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
+/*
+element.style {
+}
+img#circle {
+    width: 100%;
+    animation: circleIn 1s ease-in-out forwards;
+    opacity: 0;
+}
+#home-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    height: 100%;
+}
+body, html {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+body, html {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+0% {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+100% {
+    transform: translateY(0);
+    opacity: 1;
+}*/
 
 body,html{
     font-family: 'Montserrat', sans-serif;
