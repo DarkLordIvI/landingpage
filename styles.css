@@ -1,39 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-/*
-element.style {
-}
-img#circle {
-    width: 100%;
-    animation: circleIn 1s ease-in-out forwards;
-    opacity: 0;
-}
-#home-container {
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "left right";
-    height: 100%;
-}
-body, html {
-    font-family: 'Montserrat', sans-serif;
-    height: 100%;
-    margin: 0;
-    position: relative;
-}
-body, html {
-    font-family: 'Montserrat', sans-serif;
-    height: 100%;
-    margin: 0;
-    position: relative;
-}
-0% {
-    transform: translateY(-30px);
-    opacity: 0;
-}
-100% {
-    transform: translateY(0);
-    opacity: 1;
-}*/
+
 
 body,html{
     font-family: 'Montserrat', sans-serif;
@@ -56,14 +22,27 @@ body{
     height: 100%;
 }
 
+.floating{
+    animation-name: floatingz;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transition-timing-function: ease-in-out;
+}
+
 #inner{
     margin-left: 100px;
     grid-area: left;
     align-self: center;
     justify-self: center;
     width: 100%;
-    animation: circleIn 1s ease-in-out forwards;
+    animation-name: circleIn, floating;
+    animation-duration: 1s,3s;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards, none;
+    transition-timing-function: ease-in-out, ease-in-out;
+
 }
+/* 1s ease-in-out forwards,  3s infinite ease-in-out; */
 
 #illustration{
     grid-area: right;
@@ -84,7 +63,7 @@ img.inner-images{
 
 img#cta{
     width: 50%;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 img#cta:hover{
@@ -92,31 +71,37 @@ img#cta:hover{
 }
 
 img.logo{
-    width: 200px;
+    width: 300px;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-img#team{
-    margin-top: 60px;
+img#team{   
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
-
 p.subtitle{
     font-size: 1.25em;
-    color: orangered;
+    color: #FA9191;
     margin-top: 0;
+    padding-top: px;
 }
 
 p.text{
     font-size: 1em;
-    color: orangered;
+    color: #FA9191;
     opacity: 0.8;
+    margin: 5px;
 }
 
 img#circle{
-    width: 100%;
-    animation: circleIn 1s ease-in-out forwards;
+    width: 100%;    
+    animation: services 1s ease-in-out forwards;
     opacity: 0;  
+}
+.spin{
+    animation: spin 0.5s;
 }
 
 .service-icons{
@@ -127,28 +112,35 @@ img#circle{
 #hardware{
     top: -15%;
     left: 35%;
-    animation: services .5s ease-in-out 1s forwards;
+    animation: services .5s ease-in-out .25s forwards;
     opacity: 0;
 }
 
 #software{
     top: 40%;
     left: -10%;
-    animation: services .5s ease-in-out 1s forwards;
+    animation: services .5s ease-in-out .25s forwards;
     opacity: 0;
 }
 
 #networking{
     top: 90%;
     left: 35%;
-    animation: services .5s ease-in-out 1s forwards;
+    animation: services .5s ease-in-out .25s forwards;
     opacity: 0;
 }
 
 #repairs{
     top: 40%;
     left: 80%;
-    animation: services .5s ease-in-out 1s forwards;
+    animation: services .5s ease-in-out .25s forwards;
+    opacity: 0;
+}
+
+#continue{
+    top: 32%;
+    left: 38%;
+    animation: services .5s ease-in-out .25s forwards;
     opacity: 0;
 }
 
@@ -182,7 +174,27 @@ img#circle{
 }
 
 
-  @keyframes moveIt {
+@keyframes moveIt {
+
     from {background-position: top left;}
     to {background-position: bottom right;}
-  }
+    
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }    
+}
+
+@keyframes floatingz {
+    from { transform: translate(0, 0px); }
+    65%  { transform: translate(0, -15px); }
+    to   { transform: translate(0, -0px); }    
+}
+
+@keyframes spin { 
+    100% { 
+        transform: rotate(90deg);
+    } 
+}
